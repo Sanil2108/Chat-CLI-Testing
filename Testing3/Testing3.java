@@ -129,13 +129,14 @@ class Testing3{
         }
 
         public void sendMessage(String message, DataOutputStream dos) throws Exception{
+            message+="\n";
             dos.writeUTF(sender+":SEND:"+rcvr+":"+message);
             dos.flush();
             dos.close();
         }
 
         public void receiveMessage(DataOutputStream dos) throws Exception{
-            dos.writeUTF(sender+":RECEIVE:");
+            dos.writeUTF(sender+":RECEIVE:"+rcvr.nick);
             dos.flush();
             dos.close();
         }
