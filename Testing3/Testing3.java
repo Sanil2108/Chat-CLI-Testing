@@ -129,7 +129,7 @@ class Testing3{
         }
 
         public void sendMessage(String message, DataOutputStream dos) throws Exception{
-            message+="\n";
+            // message+="\n";
             dos.writeUTF(sender+":SEND:"+rcvr+":"+message);
             dos.flush();
             dos.close();
